@@ -1,0 +1,47 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Students {
+
+	public static void main(String[] args) {
+		 Scanner keyboard = new Scanner(System.in); 
+		
+		System.out.println("Enter the number of student : ");
+		int nmbrOfStudents = keyboard.nextInt();
+		double score = 0 ;
+		String[][] tab = new String[nmbrOfStudents][5];
+		
+		for (int i = 0 ; i < nmbrOfStudents ; i++) {
+			
+				
+			Scanner keyboard2 = new Scanner(System.in); 
+			
+			System.out.println("Enter the name of student " + (i+1)  + " : ");
+			
+			tab[i][0] = keyboard2.nextLine();
+			
+			//data.add(keyboard2.nextLine());
+			
+			System.out.println("Enter Math Score : ");
+			
+			tab[i][1] = keyboard2.nextLine();
+
+			System.out.println("Enter Info Score : ");
+			
+			tab[i][2] = keyboard2.nextLine();
+
+			System.out.println("Enter Arab Score : ");
+			
+			tab[i][3] = keyboard2.nextLine();
+	
+		}
+
+		for (int i = 0 ; i < nmbrOfStudents ; i++) {
+			score = ((Double.parseDouble(tab[i][1]))*4 + (Double.parseDouble(tab[i][2]))*3 + (Double.parseDouble(tab[i][3]))*3) / 10 ;
+			System.out.println(tab[i][0] + " general score is : " + score);
+		}
+		
+		
+	}
+
+}
