@@ -1,0 +1,54 @@
+import java.util.Map;
+import java.util.Scanner;
+import java.util.TreeMap;
+
+public class Students {
+
+	public static void main(String[] args) {
+		 Scanner keyboard = new Scanner(System.in); 
+		
+		System.out.println("Enter the number of student : ");
+		int nmbrOfStudents = keyboard.nextInt();
+		double score = 0 ;
+		String name;
+		int arabNote, mathNote, infoNote;
+		
+		TreeMap<String, Double> data = new TreeMap<>();	
+		
+		for (int i = 0 ; i < nmbrOfStudents ; i++) {
+			
+				
+			Scanner keyboard2 = new Scanner(System.in); 
+			
+			System.out.println("Enter the name of student " + (i+1)  + " : ");
+			
+			name = keyboard2.nextLine();
+			
+			System.out.println("Enter Math Score : ");
+			
+			mathNote = keyboard2.nextInt();
+
+			System.out.println("Enter Info Score : ");
+			
+			infoNote = keyboard2.nextInt();
+			
+			System.out.println("Enter Arab Score : ");
+			
+			arabNote = keyboard2.nextInt();
+			
+			
+			score = (mathNote*4 + infoNote*3 + arabNote*3)/10;
+			
+			
+			data.put(name, score);
+		}
+		
+		keyboard.close();
+		
+		for (Map.Entry<String, Double> e : data.entrySet())
+			System.out.println(e.getKey() + " note is : " + e.getValue() );
+		
+		
+	}
+
+}
